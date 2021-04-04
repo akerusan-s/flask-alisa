@@ -13,7 +13,7 @@ possibleAnswers = [
 
 @app.route('/')
 def start_screen():
-    return render_template("""<h1>Working Good</ph1>""")
+    return """<h1>Working Good</ph1>"""
 
 
 @app.route('/post', methods=['POST'])
