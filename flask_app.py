@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 sessionStorage = {}
 possibleAnswers = [
         'ладно', 'куплю', 'я куплю', 'я покупаю'
-        'покупаю', 'хорошо',
+        'покупаю', 'хорошо', "я покупаю"
     ]
 
 
@@ -50,6 +50,7 @@ def handle_dialog(req, res):
         res['response']['buttons'] = get_suggests(user_id)
         return
 
+    print(req['request']['original_utterance'].lower())
     if req['request']['original_utterance'].lower() in possibleAnswers:
         res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
         res['response']['end_session'] = True
@@ -83,4 +84,5 @@ def get_suggests(user_id):
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    # app.run(host='0.0.0.0', port=port)
+    app.run()
