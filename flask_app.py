@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 import logging
 import json
 import os
@@ -7,8 +7,8 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 sessionStorage = {}
 possibleAnswers = [
-        'ладно', 'куплю',
-        'покупаю', 'хорошо'
+        'ладно', 'куплю', 'я куплю', 'я покупаю'
+        'покупаю', 'хорошо',
     ]
 
 
