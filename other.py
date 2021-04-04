@@ -15,5 +15,5 @@ params = {
   "version": "1.0"
 }
 
-s = requests.post("http://127.0.0.1:5000/post", json=params)
+s = requests.post("https://flask-alisa-yandex.herokuapp.com/post", json=params)
 print(s.json())
